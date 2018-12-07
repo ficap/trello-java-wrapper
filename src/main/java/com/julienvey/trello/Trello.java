@@ -21,6 +21,8 @@ import com.julienvey.trello.domain.TList;
 public interface Trello {
 
     /* Board */
+    Board createBoard(String name, Argument... args);
+
     Board getBoard(String boardId, Argument... args);
 
     List<Action> getBoardActions(String boardId, Argument... args);
