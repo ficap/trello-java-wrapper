@@ -64,7 +64,7 @@ public class TrelloImpl implements Trello {
         Board board = new Board();
         board.setName(name);
 
-        Board createdBoard = postForObject(createUrl(CREATE_BOARD).asString(), board, Board.class);
+        Board createdBoard = postForObject(createUrl(CREATE_BOARD).params(args).asString(), board, Board.class, name);
         createdBoard.setInternalTrello(this);
         return createdBoard;
 
